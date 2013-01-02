@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:complexType name="pessoa">
+
+    <xs:annotation>
+      <xs:documentation>
+      </xs:documentation>
+    </xs:annotation>
+	
+    <xs:sequence>
+      <xs:element minOccurs=1 name="nome" type="xs:string"/>
+      <xs:element minOccurs=1 name="cpf" type="xs:token"/>
+	  <xs:element minOccurs=1 name="dataNasc" type="xs:date"/>
+      <xs:element maxOccurs="unbounded" name="telefone" type="token"/>
+	  <xs:complexType name="endereco" minOccurs=1>
+		<xs:sequence>
+			<xs:element name="rua" type"xs:string"/>
+			<xs:element name="numero" type"xs:string"/>
+			<xs:element name="cep" type"xs:string"/>
+		</xs:sequence>
+	  </xs:complexType>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="pessoa" type="pessoa"/>
+  <xs:element name="endereco" type="endereco"/>
+
+</xs:schema>
